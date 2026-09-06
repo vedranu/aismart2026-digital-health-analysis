@@ -1,0 +1,17 @@
+{
+  "source_note": "Fetched 2026-09-06 from OECD SDMX API (DSD_HCQO@DF_PC, HRV, 2021, age-sex standardised per 100 000 population aged 15+, SEX=_T, OBS) and Eurostat API",
+  "oecd_avoidable_admissions_hr_2021_per100k_15plus": {
+    "ADMRCHFL_congestive_heart_failure": 110.9,
+    "ADMRDBUC_diabetes": 89.8,
+    "ADMRCOPD_copd": 25.5,
+    "ADMRHYPT_hypertension": 35.9,
+    "ADMRASTH_asthma": 4.5,
+    "CHHYCOMP_chf_hypertension": 146.8,
+    "ASCOCOMP_asthma_copd": 30.0,
+    "PATRDBLE_amputation": 27.0
+  },
+  "eurostat_demo_pjanbroad_hr_2024": {"TOTAL": 3861967, "Y15-64": 2430752, "Y_GE65": 889000},
+  "eurostat_hlth_co_disch1_hr": {"all_causes_2019": 656688, "E10-E14_2019": 7099, "E10-E14_2021": 4026, "I10-I15_2019": 2640, "I10-I15_2021": 1659, "I50_2019": 6591, "I50_2021": 5735},
+  "eurostat_hlth_co_disch2_hr_per100k": {"E10-E14_2019": 174.5, "E10-E14_2021": 101.9, "I10-I15_2019": 64.9, "I10-I15_2021": 42.0, "I50_2019": 162.1, "I50_2021": 145.2},
+  "eurostat_hlth_sha11_hc_hr_mio_eur": {"HC11_2019": 713.51, "HC11_2020": 712.23, "HC11_2021": 983.16, "HC11_2022": 918.89, "HC11_2023": 1050.79, "HC1_2021": 2628.48, "HC1_2022": 2594.33, "HC1_2023": 2977.43, "TOT_HC_2021": 4719.79, "TOT_HC_2022": 4933.18, "TOT_HC_2023": 5514.05}
+}

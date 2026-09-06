@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper and this repository."
+title: "AI Digital Health Platforms for Preventive Care: Healthcare Efficiency and Organizational Innovation – analysis code and data"
+authors:
+  - family-names: Uroš
+    given-names: Vedran
+    affiliation: "Veleučilište „Marko Marulić\" u Kninu, Croatia"
+  - family-names: Birač
+    given-names: Martin
+    affiliation: "StoreDNA, Croatia"
+  - family-names: Mihanović
+    given-names: Damir
+    affiliation: "Sveučilište Sjever, Croatia"
+date-released: 2026-09-06
+version: "1.0.0"
+repository-code: "https://github.com/vedranu/aismart2026-digital-health-analysis"
+license: MIT

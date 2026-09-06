@@ -1,0 +1,149 @@
+missing per var:
+ iuapr         1
+iumapp        0
+ihif          0
+desi_aehr     0
+unmet         0
+prev_mort     0
+treat_mort    0
+hc6_share     0
+che_pps       0
+phys          1
+nurses        1
+gdp_pps       0
+age65         0
+dtype: int64
+                                                Indicator   Median              IQR          Min–max  Croatia Croatia rank*
+0      Access to own health records online (% ind., 2024)     38.3        23.6–46.1         5.1–73.6     26.2         18/26
+1     Online appointment with practitioner (% ind., 2024)     33.0        27.8–52.1         4.5–63.8     25.7         22/27
+2        Seeking health information online (% ind., 2024)     59.6        54.2–67.4        31.5–82.3     55.5         19/27
+3     Digital Decade e-health records score (0-100, 2024)     86.0        76.7–88.2       24.5–100.0     86.6         13/27
+4   Unmet medical needs, cost/distance/waiting (% , 2024)      1.9          1.0–3.6         0.1–12.1      1.3         10/27
+5               Preventable mortality (per 100 000, 2023)    149.8      124.5–214.4       89.7–309.0    225.2         22/27
+6                 Treatable mortality (per 100 000, 2023)     74.2       62.4–129.4       51.7–199.7    126.1         20/27
+7                  Preventive care share of CHE (%, 2023)      2.9          2.5–4.1          0.9–5.2      4.5          4/27
+8   Current health expenditure (PPS per inhabitant, 2023)   3082.4    2168.7–4369.4    1738.2–5380.7   1989.0         24/27
+9               Practising physicians (per 100 000, 2023)    411.6      372.9–462.6      334.4–625.3    401.4         14/26
+10                  Practising nurses (per 100 000, 2023)    719.5     512.9–1086.5     100.5–1465.3    251.6         24/26
+11                             GDP per capita (PPS, 2024)  36413.1  31258.0–45680.1  26324.3–97690.2  31053.1         21/27
+12                          Population aged 65+ (%, 2024)     20.5        19.9–22.1        15.0–24.3     23.0          6/27
+       outcome  predictor    rho      p     lo     hi   n  p_holm  rho_partial_gdp
+0    prev_mort      iuapr -0.085  0.679 -0.483  0.294  26   1.000           -0.059
+1    prev_mort     iumapp -0.265  0.182 -0.601  0.140  27   1.000            0.106
+2    prev_mort  desi_aehr  0.229  0.251 -0.160  0.544  27   1.000            0.249
+3    prev_mort  hc6_share  0.001  0.995 -0.418  0.431  27   1.000            0.128
+4   treat_mort      iuapr -0.168  0.412 -0.514  0.239  26   1.000           -0.183
+5   treat_mort     iumapp -0.607  0.001 -0.807 -0.296  27   0.009           -0.363
+6   treat_mort  desi_aehr  0.102  0.612 -0.272  0.485  27   1.000            0.093
+7   treat_mort  hc6_share -0.189  0.344 -0.520  0.193  27   1.000           -0.109
+8        unmet      iuapr  0.256  0.207 -0.175  0.624  26   1.000            0.296
+9        unmet     iumapp  0.300  0.129 -0.099  0.634  27   1.000            0.591
+10       unmet  desi_aehr  0.163  0.416 -0.224  0.547  27   1.000            0.154
+11       unmet  hc6_share  0.004  0.983 -0.451  0.406  27   1.000            0.059
+PCA explained variance: [0.316 0.236 0.174]
+            PC1   PC2   PC3
+iuapr      0.60  0.07 -0.25
+iumapp     0.53 -0.41 -0.04
+desi_aehr  0.32  0.40 -0.51
+hc6_share  0.29 -0.29  0.62
+prev_mort -0.00  0.69  0.37
+unmet      0.41  0.33  0.38
+silhouette: {2: 0.24, 3: 0.161, 4: 0.185, 5: 0.202, 6: 0.196}
+Jaccard stability per cluster: [0.8  0.65 0.68 0.46]
+         iuapr  iumapp  desi_aehr  hc6_share  prev_mort  unmet  n                       countries
+cluster                                                                                          
+1         53.4    42.8       88.0        3.4      221.4    8.4  5              EE, EL, FI, LT, LV
+2         29.1    21.7       83.9        2.1      173.1    1.9  8  BG, CY, MT, PL, PT, RO, SI, SK
+3         39.9    56.7       87.4        2.8      120.9    2.3  6          BE, DK, ES, FR, LU, SE
+4         26.6    34.7       74.3        4.3      168.6    1.4  7      AT, DE, HR, HU, IE, IT, NL
+panel obs: 77 countries: 27
+   outcome predictor  beta_FE   se_FE      lo      hi    p_FE  beta_pooled  p_pooled  r2_within   n
+0  ln_prev     iuapr   0.0002  0.0022 -0.0040  0.0044  0.9373      -0.0023    0.4023     0.9882  77
+1  ln_prev    iumapp   0.0000  0.0023 -0.0045  0.0046  0.9927       0.0004    0.9375     0.9882  77
+2    unmet     iuapr   0.0408  0.0316 -0.0212  0.1027  0.1969       0.0658    0.0113     0.9200  77
+3    unmet    iumapp   0.0315  0.0475 -0.0616  0.1247  0.5071       0.0464    0.1304     0.9169  77
+pop15+=3,319,752 base_adm=8,701 cost2019=1,087 infl=1.473 cost_base=1,600
+{
+ "enrolled": [
+  1325.3017025336833,
+  2769.385957816884,
+  4783.2068971290655
+ ],
+ "avoided_admissions": [
+  225.48758931746812,
+  650.1490018737206,
+  1386.7856480921444
+ ],
+ "gross_savings_meur": [
+  0.37478667561009343,
+  1.1200689417155316,
+  2.576382454782267
+ ],
+ "programme_cost_meur": [
+  0.3623841092073951,
+  0.9091145628511557,
+  2.032882152621255
+ ],
+ "net_meur": [
+  -0.8072789086665426,
+  0.19227693307926377,
+  1.4146028491008742
+ ],
+ "p_net_positive": 0.664,
+ "breakeven_price_eur": [
+  165.476332535533,
+  422.6498660977431,
+  797.989260894985
+ ],
+ "base_adm": 8701.069991999999,
+ "cost_base": 1600.135833150598,
+ "cost_2019": 1086.5281534000926,
+ "infl": 1.4727053580188083,
+ "pop15": 3319752,
+ "param_summary": {
+  "Baseline avoidable admissions (n/yr)": [
+   7305.126091305811,
+   8707.815955615757,
+   10108.356592338378
+  ],
+  "Admissions per high-risk patient (n/yr)": [
+   1.049725498381359,
+   1.252333933849572,
+   1.4485381206216725
+  ],
+  "High-risk patients enrolled (share)": [
+   0.23958717977446284,
+   0.400669520371949,
+   0.5597595457926535
+  ],
+  "Relative reduction in admissions (enrolled)": [
+   0.11621722151648096,
+   0.19932088750459148,
+   0.2800046810661516
+  ],
+  "Cost per avoided admission (EUR)": [
+   1384.7898999359638,
+   1726.8557619240646,
+   2186.7402605295165
+  ],
+  "Platform cost per enrolled patient (EUR/yr)": [
+   232.72409150313302,
+   339.1270719861709,
+   484.5918841288181
+  ]
+ }
+}
+done
+--- k=3
+         iuapr  iumapp  desi_aehr  hc6_share  prev_mort  unmet   n                                           countries
+cluster                                                                                                               
+1         53.4    42.8       88.0        3.4      221.4    8.4   5                                  EE, EL, FI, LT, LV
+2         29.1    21.7       83.9        2.1      173.1    1.9   8                      BG, CY, MT, PL, PT, RO, SI, SK
+3         32.7    44.9       80.4        3.6      146.6    1.8  13  AT, BE, DE, DK, ES, FR, HR, HU, IE, IT, LU, NL, SE
+--- k=4
+         iuapr  iumapp  desi_aehr  hc6_share  prev_mort  unmet  n                       countries
+cluster                                                                                          
+1         53.4    42.8       88.0        3.4      221.4    8.4  5              EE, EL, FI, LT, LV
+2         29.1    21.7       83.9        2.1      173.1    1.9  8  BG, CY, MT, PL, PT, RO, SI, SK
+3         39.9    56.7       87.4        2.8      120.9    2.3  6          BE, DK, ES, FR, LU, SE
+4         26.6    34.7       74.3        4.3      168.6    1.4  7      AT, DE, HR, HU, IE, IT, NL
