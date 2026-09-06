@@ -15,3 +15,8 @@ date-released: 2026-09-06
 version: "1.0.0"
 repository-code: "https://github.com/vedranu/aismart2026-digital-health-analysis"
 license: MIT
+doi: 10.5281/zenodo.22558363
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22558363
+    description: Zenodo archive of this repository
