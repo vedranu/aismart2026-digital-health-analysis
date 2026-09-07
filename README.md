@@ -1,4 +1,4 @@
-# AI Digital Health Platforms for Preventive Care: Healthcare Efficiency and Organizational Innovation
+# AI Digital Health Platforms for Preventive Care, Healthcare Efficiency and Organizational Innovation
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22558363.svg)](https://doi.org/10.5281/zenodo.22558363)
 
@@ -56,7 +56,7 @@ figures/     Figures 1–3 of the paper and the supplementary correlation heatma
 
 ## Citation
 
-Uroš, V., Birač, M., & Mihanović, D. (2026). *AI digital health platforms for preventive care: Healthcare efficiency and organizational innovation*. Paper presented at AI-SMART 2026, Belgrade. Code and data: https://doi.org/10.5281/zenodo.22558363 (archived on Zenodo) and this repository.
+Uroš, V., Birač, M., & Mihanović, D. (2026). *AI digital health platforms for preventive care, healthcare efficiency and organizational innovation*. Paper presented at AI-SMART 2026, Belgrade. Code and data: https://doi.org/10.5281/zenodo.22558363 (archived on Zenodo) and this repository.
 
 ## License
 
