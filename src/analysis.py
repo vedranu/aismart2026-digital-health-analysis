@@ -169,11 +169,14 @@ markers = ['o', 's', '^', 'D', 'v', 'P']; cols = ['#1f77b4', '#d62728', '#2ca02c
 for c in sorted(np.unique(cl)):
     m = cl == c; ax.scatter(S[m, 0], S[m, 1], s=48, marker=markers[c - 1], c=cols[c - 1], label=f'Cluster {c}', edgecolor='k', linewidth=.4, zorder=3)
 for i, g in enumerate(X.index):
-    ax.annotate(g, (S[i, 0], S[i, 1]), xytext=(4, 3), textcoords='offset points', fontsize=7.5, fontweight='bold' if g == 'HR' else 'normal', color='black' if g != 'HR' else '#b30000')
+    off = {'ES': (6, -9), 'SE': (6, -8), 'FR': (-13, 4), 'SI': (4, 5), 'PT': (5, -8), 'MT': (-14, 3), 'BE': (-12, 5), 'CY': (-13, -3), 'SK': (-13, 3)}.get(g, (4, 3))
+    ax.annotate(g, (S[i, 0], S[i, 1]), xytext=off, textcoords='offset points', fontsize=7.5, fontweight='bold' if g == 'HR' else 'normal', color='black' if g != 'HR' else '#b30000')
 sc = 2.6
 for v in cl_vars:
     ax.arrow(0, 0, load.loc[v, 'PC1'] * sc, load.loc[v, 'PC2'] * sc, color='grey', width=.004, head_width=.08, alpha=.8, zorder=2)
-    ax.text(load.loc[v, 'PC1'] * sc * 1.15, load.loc[v, 'PC2'] * sc * 1.15, short[v], fontsize=7, color='dimgrey', ha='center')
+    lx, ly = load.loc[v, 'PC1'] * sc * 1.15, load.loc[v, 'PC2'] * sc * 1.15
+    dx, dy, ha = {'iumapp': (0.35, -0.12, 'left'), 'hc6_share': (-0.8, -0.14, 'left'), 'iuapr': (0.25, 0.08, 'left'), 'unmet': (0.2, 0.0, 'left'), 'desi_aehr': (0.15, 0.05, 'left')}.get(v, (0, 0, 'center'))
+    ax.text(lx + dx, ly + dy, short[v], fontsize=7, color='dimgrey', ha=ha, bbox=dict(boxstyle='round,pad=0.15', fc='white', ec='none', alpha=0.8))
 ax.axhline(0, color='lightgrey', lw=.6); ax.axvline(0, color='lightgrey', lw=.6)
 ax.set_xlabel(f'PC1 ({pca.explained_variance_ratio_[0]*100:.1f}% of variance)', fontsize=9); ax.set_ylabel(f'PC2 ({pca.explained_variance_ratio_[1]*100:.1f}% of variance)', fontsize=9)
 ax.legend(fontsize=8, loc='best', frameon=False); ax.tick_params(labelsize=8)
@@ -250,9 +253,9 @@ for i, (k, lo, hi) in enumerate(torn):
     ax.text(max(lo, hi) + .05, i, f'{min(lo,hi):.2f} to {max(lo,hi):.2f}', va='center', fontsize=7.5)
 ax.set_yticks(range(len(torn))); ax.set_yticklabels([t[0] for t in torn], fontsize=8)
 ax.axvline(base_net, color='k', lw=.8); ax.axvline(0, color='grey', lw=.6, ls='--')
-ax.set_xlabel(f'Net annual budget impact, million EUR (base case = {base_net:.2f}; each parameter at its 10th and 90th percentile)', fontsize=8)
-ax.tick_params(labelsize=8); ax.set_xlim(min(t[1] for t in torn + [(0, 0, 0)]) - .3, max(t[2] for t in torn) + 1.2)
-plt.tight_layout(); plt.savefig(FIG + 'Figure3_tornado.png', dpi=300); plt.savefig(FIG + 'Figure3_tornado.tif', dpi=300, pil_kwargs={'compression': 'tiff_lzw'}); plt.close()
+ax.set_xlabel(f'Net annual budget impact, million EUR (base case {base_net:.2f})', fontsize=8)
+ax.tick_params(labelsize=8); ax.set_xlim(min(t[1] for t in torn + [(0, 0, 0)]) - .15, max(t[2] for t in torn) + 0.35)
+plt.tight_layout(); plt.savefig(FIG + 'Figure3_tornado.png', dpi=300, bbox_inches='tight'); plt.savefig(FIG + 'Figure3_tornado.tif', dpi=300, bbox_inches='tight', pil_kwargs={'compression': 'tiff_lzw'}); plt.close()
 print('done')
 
 # alternative k profiles
